@@ -1,43 +1,33 @@
-package Classes;
 /*
- * Classe Time
- * 
- * Para o trabalho da disciplina Projeto Interdiciplinar II
- * 
- * Data: 04/03/2016
- * Aluno: Henrique A. Conzatti
- * R.a.: 2068657
- * 
- * Para o trabalho da disciplina Projeto Interdiciplinar II
- * 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
+package pacote;
 
+/**
+ *
+ * @author Egerton
+ */
 public class Time {
+    private String nomeTime;
+    private String cidadeTime;
 
-    //Armazena nome do time
-    String nome;
-
-    //Armazena cidade natal do time
-    String cidade;
-
-
-    //gets e sets Para aplicar conceitos de encapsulamento
-
-    //para atributo nome
-    public void setNome(String name){
-	this.nome = name;
+    public String getNomeTime() {
+        return nomeTime;
     }
 
-    public String getNome(){
-	return this.nome;
+    public void setNomeTime(String nomeTime) {
+        this.nomeTime = nomeTime;
     }
 
-    //para atributo cidade
-    public void setCidade(String cidade){
-	this.cidade = cidade;
+    public String getCidadeTime() {
+        return cidadeTime;
     }
 
-    public String getCidade(){
-	return this.cidade;
+    public void setCidadeTime(String cidadeTime) {
+        this.cidadeTime = cidadeTime;
     }
+    
+    
 }

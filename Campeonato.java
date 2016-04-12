@@ -1,54 +1,51 @@
-package Classes;
 /*
- * Classe Campeonato
- * 
- * Para o trabalho da disciplina Projeto Interdiciplinar II
- * 
- * Data: 04/03/2016
- * Aluno: Henrique A. Conzatti
- * R.a.: 2068657
- * 
- * Para o trabalho da disciplina Projeto Interdiciplinar II
- * 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
+package pacote;
 
-// importa pacote para trabalhar com Matrizes dinamicamente
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Egerton
+ */
 public class Campeonato {
 
-    //Armazena lista de partidas do campeonato
-    ArrayList<Partida> partidas;
+    private String nomeCampeonato;
+    private ArrayList<Partida> listaPartidas;
+    private ArrayList<Time> listaTimes;
 
-    //Armazena lista de times que participam do campeonato
-    ArrayList<Time> times;
-
-    // Armazena nome do campeonato
-    StringnomeCampeonato;
-
-    //gets e sets Para aplicar conceitos de encapsulamento
-
-    //para lista de partidas
-    public void setPartidas(Partida partida){
-	this.partidas.add(partida);
-    }
-    public Partida getPartidas(int index){
-	return this.partidas.get(index);
+    public void newPartida() {
+        this.listaPartidas = new ArrayList<>();
     }
 
-    //para lista de times
-    public void setTimes(Time time){
-	this.times.add(time);
-    }
-    public Time getTimes(int index){
-	return this.times.get(index);
+    public void newTime() {
+        this.listaTimes = new ArrayList<>();
     }
 
-    //para atributo nomeCampeonato
-    public void setNomeCampeonato(String nome){
-	this.nomeCampeonato = nome;
+    public String getNomeCampeonato() {
+        return nomeCampeonato;
     }
-    public String getNomeCampeonato(){
-	return this.nomeCampeonato;
+
+    public void setNomeCampeonato(String nomeCampeonato) {
+        this.nomeCampeonato = nomeCampeonato;
+    }
+
+    public ArrayList<Partida> getListaPartidas() {
+        return listaPartidas;
+    }
+
+    public void addPartida(Partida partida) {
+        this.listaPartidas.add(partida);
+    }
+
+    public ArrayList<Time> getListaTimes() {
+        return listaTimes;
+    }
+
+    public void addTime(Time time) {
+        this.listaTimes.add(time);
     }
 }

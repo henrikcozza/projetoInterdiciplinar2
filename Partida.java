@@ -1,60 +1,51 @@
-package Classes;
 /*
- * Classe Partida
- * 
- * Para o trabalho da disciplina Projeto Interdiciplinar II
- * 
- * Data: 04/03/2016
- * Aluno: Henrique A. Conzatti
- * R.a.: 2068657
- * 
- * Para o trabalho da disciplina Projeto Interdiciplinar II
- * 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
+package pacote;
 
+/**
+ *
+ * @author Egerton
+ */
 public class Partida {
+    private int golMandante;
+    private int golVisitante;
+    private Time timeMandante;
+    private Time timeVisitante;
 
-    // Armazena numero inteiro do placar de gols do time da casa
-    int golMandante;
-    //Armazena numero inteiro do placar de gols do time visitante
-    int golVisitante;
-
-    // Armazena instancia do time da casa
-    Time mandante;
-    // Armazena instancia do time visitante
-    Time visitante;
-
-    //gets e sets Para aplicar conceitos de encapsulamento
-
-    //para atributo golMandante
-    public void setGolMandante(int gols){
-	this.golMandante = gols;
-    }
-    public int getGolMandante(){
-	return this.golMandante;
+    public int getGolMandante() {
+        return golMandante;
     }
 
-    //para atributo golVisitante
-    public void setGolVisitante(int gols){
-	this.golVisitante = gols;
-    }
-    public int getGolVisitante(){
-	return this.golVisitante;
+    public void setGolMandante(int golMandante) {
+        this.golMandante = golMandante;
     }
 
-    //para atributo mandante
-    public void setMandante(Time timeCasa){
-	this.mandante = timeCasa;
-    }
-    public Time getMandante(){
-	return this.mandante;
+    public int getGolVisitante() {
+        return golVisitante;
     }
 
-    //para atributo visitante
-    public void setVisitante(Time timeVisitante){
-	this.mandante = timeVisitante;
+    public void setGolVisitante(int golVisitante) {
+        this.golVisitante = golVisitante;
     }
-    public Time getVisitante(){
-	return this.visitante;
+
+    public Time getTimeMandante() {
+        return timeMandante;
     }
+
+    public void setTimeMandante(Time timeMandante) {
+        this.timeMandante = timeMandante;
+    }
+
+    public Time getTimeVisitante() {
+        return timeVisitante;
+    }
+
+    public void setTimeVisitante(Time timeVisitante) {
+        this.timeVisitante = timeVisitante;
+    }
+    
+    
 }
