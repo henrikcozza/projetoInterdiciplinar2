@@ -134,7 +134,7 @@ public class CadastroTimes extends javax.swing.JPanel {
         GlobalInstance.menu.updateUI();
     }//GEN-LAST:event_button2ActionPerformed
 
-    // Botão para cadastro de times
+ 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
        if(this.textField1.getText().equalsIgnoreCase("")){
         showMessageDialog(null, "Por favor insira o nome do time"); 

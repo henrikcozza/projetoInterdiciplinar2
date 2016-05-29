@@ -24,7 +24,7 @@ public class Principal {
    
     public static void main(String[] args) {
         
-         // Aqui vira o codigo para setar a instancia global janela       
+   
         
         
         

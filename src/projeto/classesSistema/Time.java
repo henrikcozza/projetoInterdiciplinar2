@@ -17,9 +17,9 @@ package projeto.classesSistema;
 
 
 public class Time {
-    //Armazena nome do time
+    
     private String nomeTime;
-    //Armazena cidade natal do time
+
     private String cidadeTime;
     
     
@@ -29,7 +29,7 @@ public class Time {
         setCidadeTime(cidade);
         
     }
-    //aplicar conceitos de encapsulamento
+  
     public String getNomeTime() {
         return nomeTime;
     }

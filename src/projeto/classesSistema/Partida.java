@@ -27,7 +27,7 @@ public class Partida {
     private Time timeVisitante;
     
     
-    //Construtor
+
     public Partida(Time mandante, Time visitante, int golMandante, int golVisitante ){
         
         setTimeMandante(mandante);
@@ -36,7 +36,7 @@ public class Partida {
         setGolVisitante(golVisitante);
     }
     
-    //Para aplicar conceitos de encapsulamento
+
     public int getGolMandante() {
         return golMandante;
     }

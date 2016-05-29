@@ -167,7 +167,7 @@ public class CadastroPartida extends javax.swing.JPanel {
     }//GEN-LAST:event_textField2ActionPerformed
 
     
-    //atributos
+
     
     private Menu menuPrincipal; 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -25,7 +25,7 @@ import projeto.main.GlobalInstance;
 
 public class ListagemTimes extends javax.swing.JPanel {
 
-    //variaveis
+ 
     private DefaultTableModel model = new DefaultTableModel();
     /**
      * Creates new form ListagemTimes
@@ -46,7 +46,7 @@ public class ListagemTimes extends javax.swing.JPanel {
     // Metodo zera modelo de tabela, pega lista de times e insere na tabela setando o jtable no fim
     public void Atualiza(){
         
-        //zera model
+    
        model = null;
        model = new DefaultTableModel(
          new Object [][] {
@@ -57,23 +57,23 @@ public class ListagemTimes extends javax.swing.JPanel {
             }
         );        
       
-        //percorre lista e adciona a tabela
+        
         for (Time time : GlobalInstance.campeonato.getListaTimes()) {
            model.addRow(new Object[]{time.getNomeTime(),GlobalInstance.campeonato.getPlacarTime(time).getPontuação() , GlobalInstance.campeonato.getPlacarTime(time).getSaldoGols()});
         } 
         
-        //seta modelo no jtable
+  
         jTable1.setModel(model);
         
         formataTable(jTable1);
     }
     
     public void formataTable(JTable table){
-        // seta modelo de renderização
+        
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        //define alinhamento horizontal
+      
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
-        //seleciona coluna e centraliza texto
+
         table.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
         table.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
     }
@@ -157,7 +157,7 @@ public class ListagemTimes extends javax.swing.JPanel {
     }//GEN-LAST:event_button2ActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
-        // Botão de atualização
+       
         this.Atualiza();
     }//GEN-LAST:event_button3ActionPerformed
 

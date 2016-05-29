@@ -26,13 +26,13 @@ import projeto.gui.Menu;
 
 
 public class GlobalInstance { 
-    //instancias de sistema
+ 
     public static Campeonato campeonato = new Campeonato();
     
-    //instancas de telas
+    
     public GlobalInstance(){}
     public static Menu menu = new Menu();
-    public static JFrame janela = new JFrame(); // janela principal que contera todos os paines, apenas tornando os paineis visiveis ou nao conforme a navegação
+    public static JFrame janela = new JFrame(); 
     public static CadastroPartida cPartida = new CadastroPartida();
     public static CadastroTimes cTime = new CadastroTimes();
     public static ListagemPartidas lPartida = new ListagemPartidas();
