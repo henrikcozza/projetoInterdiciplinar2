@@ -1,5 +1,5 @@
 /*
- * Criado para o projeto interdiciplinar II da universidade anembi morumbi no ano de 2016
+ * Criado para o projeto interdiciplinar II da universidade anhembi morumbi no ano de 2016
  * 
  * Autores:   
  * Henrique Alves Conzatti
@@ -14,6 +14,10 @@
  */
 package projeto.gui;
 
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import projeto.classesSistema.Time;
 import projeto.main.GlobalInstance;
@@ -31,7 +35,11 @@ public class ListagemTimes extends javax.swing.JPanel {
      
     public ListagemTimes() {
         initComponents();
-    
+        
+        
+        
+        
+        //atualiza lista de times
         this.Atualiza();
     }
     
@@ -51,11 +59,23 @@ public class ListagemTimes extends javax.swing.JPanel {
       
         //percorre lista e adciona a tabela
         for (Time time : GlobalInstance.campeonato.getListaTimes()) {
-           model.addRow(new Object[]{time.getNomeTime(), null, null});
+           model.addRow(new Object[]{time.getNomeTime(),GlobalInstance.campeonato.getPlacarTime(time).getPontuação() , GlobalInstance.campeonato.getPlacarTime(time).getSaldoGols()});
         } 
         
         //seta modelo no jtable
         jTable1.setModel(model);
+        
+        formataTable(jTable1);
+    }
+    
+    public void formataTable(JTable table){
+        // seta modelo de renderização
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        //define alinhamento horizontal
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+        //seleciona coluna e centraliza texto
+        table.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
+        table.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
     }
 
     /**
@@ -90,6 +110,7 @@ public class ListagemTimes extends javax.swing.JPanel {
                 "Time", "Pontuação", "Saldo de gols"
             }
         ));
+        jTable1.setCellSelectionEnabled(true);
         jScrollPane1.setViewportView(jTable1);
 
         button3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));

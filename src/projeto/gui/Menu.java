@@ -1,5 +1,5 @@
 /*
- * Criado para o projeto interdiciplinar II da universidade anembi morumbi no ano de 2016
+ * Criado para o projeto interdiciplinar II da universidade anhembi morumbi no ano de 2016
  * 
  * Autores:   
  * Henrique Alves Conzatti
@@ -15,9 +15,8 @@
 
 package projeto.gui;
 
-import javax.swing.JPanel;
 import projeto.main.GlobalInstance;
-import projeto.main.Principal;
+
 
 
 public class Menu extends javax.swing.JPanel {

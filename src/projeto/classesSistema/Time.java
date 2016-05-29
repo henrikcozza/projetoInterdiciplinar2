@@ -1,5 +1,5 @@
 /*
- * Criado para o projeto interdiciplinar II da universidade anembi morumbi no ano de 2016
+ * Criado para o projeto interdiciplinar II da universidade anhembi morumbi no ano de 2016
  * 
  * Autores:   
  * Henrique Alves Conzatti
@@ -21,6 +21,8 @@ public class Time {
     private String nomeTime;
     //Armazena cidade natal do time
     private String cidadeTime;
+    
+    
 
     public Time(String nome, String cidade){
         setNomeTime(nome);
