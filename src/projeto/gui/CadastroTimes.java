@@ -140,11 +140,12 @@ public class CadastroTimes extends javax.swing.JPanel {
         showMessageDialog(null, "Por favor insira o nome do time"); 
        }else if(this.textField2.getText().equalsIgnoreCase("")){
         showMessageDialog(null, "Por favor insira a cidade do time");   
-       }else 
+       }else {
         GlobalInstance.campeonato.addTime(new Time(this.textField1.getText(), this.textField2.getText()));
         showMessageDialog(null, "O time foi cadastrado com sucesso"); 
         this.textField1.setText("");
         this.textField2.setText("");
+       }
         
     }//GEN-LAST:event_button1ActionPerformed
 
