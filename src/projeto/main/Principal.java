@@ -24,7 +24,13 @@ public class Principal {
    
     public static void main(String[] args) {
         
-         // Aqui vira o codigo para setar a instancia global janela       
+         // Aqui vira o codigo para setar a instancia global janela    
+         /* Modificações: (30/05/2016 11:00)
+          * Centralizado a tela
+          * Atualização automatica dos times e Partidas
+          * Listagem dos times nos choice
+          * Validação dos times selecionados, times iguais.
+          */
         
         
         
@@ -32,6 +38,7 @@ public class Principal {
         GlobalInstance.janela.setSize(600,400);
         GlobalInstance.janela.setDefaultCloseOperation(GlobalInstance.janela.EXIT_ON_CLOSE);
         GlobalInstance.janela.add(GlobalInstance.menu); 
+        GlobalInstance.janela.setLocationRelativeTo(null);//centralizando a tela
         
        
         

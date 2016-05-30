@@ -40,7 +40,7 @@ public class ListagemTimes extends javax.swing.JPanel {
         
         
         //atualiza lista de times
-        this.Atualiza();
+//        this.Atualiza();// não é mais necessário, agora é chamado pelo botão do menu inicial
     }
     
     // Metodo zera modelo de tabela, pega lista de times e insere na tabela setando o jtable no fim
@@ -90,7 +90,6 @@ public class ListagemTimes extends javax.swing.JPanel {
         button2 = new java.awt.Button();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        button3 = new java.awt.Button();
 
         button2.setLabel("Voltar ao Menu");
         button2.addActionListener(new java.awt.event.ActionListener() {
@@ -113,14 +112,6 @@ public class ListagemTimes extends javax.swing.JPanel {
         jTable1.setCellSelectionEnabled(true);
         jScrollPane1.setViewportView(jTable1);
 
-        button3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        button3.setLabel("Atualizar");
-        button3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button3ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -131,8 +122,6 @@ public class ListagemTimes extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
         );
@@ -142,9 +131,7 @@ public class ListagemTimes extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(button3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -156,15 +143,9 @@ public class ListagemTimes extends javax.swing.JPanel {
         GlobalInstance.menu.updateUI();
     }//GEN-LAST:event_button2ActionPerformed
 
-    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
-        // Botão de atualização
-        this.Atualiza();
-    }//GEN-LAST:event_button3ActionPerformed
-
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button button2;
-    private java.awt.Button button3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

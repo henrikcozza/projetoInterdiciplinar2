@@ -12,7 +12,6 @@
  * Ra: 20709887
  *
  */
-
 package projeto.main;
 
 import javax.swing.JFrame;
@@ -24,13 +23,14 @@ import projeto.gui.ListagemPartidas;
 import projeto.gui.ListagemTimes;
 import projeto.gui.Menu;
 
+public class GlobalInstance {
 
-public class GlobalInstance { 
     //instancias de sistema
     public static Campeonato campeonato = new Campeonato();
-    
+
     //instancas de telas
-    public GlobalInstance(){}
+    public GlobalInstance() {
+    }
     public static Menu menu = new Menu();
     public static JFrame janela = new JFrame(); // janela principal que contera todos os paines, apenas tornando os paineis visiveis ou nao conforme a navegação
     public static CadastroPartida cPartida = new CadastroPartida();
@@ -38,6 +38,5 @@ public class GlobalInstance {
     public static ListagemPartidas lPartida = new ListagemPartidas();
     public static ListagemTimes lTime = new ListagemTimes();
     public static About about = new About();
-  
-    
+
 }

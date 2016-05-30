@@ -12,20 +12,55 @@
  * Ra: 20709887
  *
  */
-
 package projeto.gui;
 
+import javax.swing.JTable;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import projeto.classesSistema.Partida;
+import projeto.classesSistema.Time;
 import projeto.main.GlobalInstance;
-
 
 public class ListagemPartidas extends javax.swing.JPanel {
 
-    /**
-     * Creates new form ListagemPartidas
-     */
+    private DefaultTableModel model = new DefaultTableModel();
+
     public ListagemPartidas() {
         initComponents();
-        
+
+    }
+
+    public void Atualiza() {
+
+        //zera model
+        model = null;
+        model = new DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Mandante", "Visitante", "Gols Mandante", "Gols Visitante"
+                }
+        );
+
+        //percorre lista e adciona a tabela
+        for (Partida partida : GlobalInstance.campeonato.getListaPartidas()) {
+            model.addRow(new Object[]{partida.getTimeMandante().getNomeTime(), partida.getTimeVisitante().getNomeTime() ,partida.getGolMandante(), partida.getGolVisitante()});
+        }
+
+        //seta modelo no jtable
+        jTable2.setModel(model);
+
+        formataTable(jTable2);
+    }
+
+    public void formataTable(JTable table) {
+        // seta modelo de renderização
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        //define alinhamento horizontal
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+        //seleciona coluna e centraliza texto
+        table.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
+        table.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
     }
 
     /**
@@ -39,7 +74,6 @@ public class ListagemPartidas extends javax.swing.JPanel {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        button3 = new java.awt.Button();
         button2 = new java.awt.Button();
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -55,14 +89,6 @@ public class ListagemPartidas extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        button3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        button3.setLabel("Atualizar");
-        button3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button3ActionPerformed(evt);
-            }
-        });
-
         button2.setLabel("Voltar ao Menu");
         button2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,8 +102,6 @@ public class ListagemPartidas extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(130, 130, 130))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -91,20 +115,14 @@ public class ListagemPartidas extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button3ActionPerformed
-
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         // TODO add your handling code here:
-         GlobalInstance.janela.remove(GlobalInstance.lPartida);
+        GlobalInstance.janela.remove(GlobalInstance.lPartida);
         GlobalInstance.janela.add(GlobalInstance.menu);
         GlobalInstance.menu.updateUI();
     }//GEN-LAST:event_button2ActionPerformed
@@ -112,7 +130,6 @@ public class ListagemPartidas extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button button2;
-    private java.awt.Button button3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables

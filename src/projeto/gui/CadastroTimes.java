@@ -12,13 +12,11 @@
  * Ra: 20709887
  *
  */
-
 package projeto.gui;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 import projeto.classesSistema.Time;
 import projeto.main.GlobalInstance;
-
 
 public class CadastroTimes extends javax.swing.JPanel {
 
@@ -27,7 +25,7 @@ public class CadastroTimes extends javax.swing.JPanel {
      */
     public CadastroTimes() {
         initComponents();
-       
+
     }
 
     /**
@@ -129,24 +127,24 @@ public class CadastroTimes extends javax.swing.JPanel {
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         // TODO add your handling code here:
-         GlobalInstance.janela.remove(GlobalInstance.cTime);
+        GlobalInstance.janela.remove(GlobalInstance.cTime);
         GlobalInstance.janela.add(GlobalInstance.menu);
         GlobalInstance.menu.updateUI();
     }//GEN-LAST:event_button2ActionPerformed
 
     // Botão para cadastro de times
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-       if(this.textField1.getText().equalsIgnoreCase("")){
-        showMessageDialog(null, "Por favor insira o nome do time"); 
-       }else if(this.textField2.getText().equalsIgnoreCase("")){
-        showMessageDialog(null, "Por favor insira a cidade do time");   
-       }else {
-        GlobalInstance.campeonato.addTime(new Time(this.textField1.getText(), this.textField2.getText()));
-        showMessageDialog(null, "O time foi cadastrado com sucesso"); 
-        this.textField1.setText("");
-        this.textField2.setText("");
-       }
-        
+        if (this.textField1.getText().equalsIgnoreCase("")) {
+            showMessageDialog(null, "Por favor insira o nome do time");
+        } else if (this.textField2.getText().equalsIgnoreCase("")) {
+            showMessageDialog(null, "Por favor insira a cidade do time");
+        } else {
+            GlobalInstance.campeonato.addTime(new Time(this.textField1.getText(), this.textField2.getText()));
+            showMessageDialog(null, "O time foi cadastrado com sucesso");
+            this.textField1.setText("");
+            this.textField2.setText("");
+        }
+
     }//GEN-LAST:event_button1ActionPerformed
 
     private void textField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField2ActionPerformed

@@ -12,19 +12,31 @@
  * Ra: 20709887
  *
  */
-
 package projeto.gui;
 
+import static javax.swing.JOptionPane.showMessageDialog;
+import projeto.classesSistema.Partida;
+import projeto.classesSistema.Time;
 import projeto.main.GlobalInstance;
-
 
 public class CadastroPartida extends javax.swing.JPanel {
 
-    
     public CadastroPartida() {
         initComponents();
-       
-        
+
+    }
+
+    public void atualizarTimes() {
+        // remove todos os itens e adidiona os iniciais
+        choice1.removeAll();
+        choice2.addItem("-- Selecione");
+        choice1.addItem("-- Selecione");
+
+        // atualizar os times
+        for (Time x : GlobalInstance.campeonato.getListaTimes()) {
+            choice2.addItem(x.getNomeTime());
+            choice1.addItem(x.getNomeTime());
+        }
     }
 
     /**
@@ -151,11 +163,24 @@ public class CadastroPartida extends javax.swing.JPanel {
         GlobalInstance.janela.remove(GlobalInstance.cPartida);
         GlobalInstance.janela.add(GlobalInstance.menu);
         GlobalInstance.menu.updateUI();
-        
+
     }//GEN-LAST:event_button2ActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
-        // TODO add your handling code here:
+       if(choice1.getSelectedIndex() == 0){
+        showMessageDialog(null, "Por favor selecione um Time Mandante"); 
+       }else if(choice2.getSelectedIndex() == 0){
+        showMessageDialog(null, "Por favor selecione um Time Visitante");   
+       }else if(choice1.getSelectedIndex() == choice2.getSelectedIndex()){
+        showMessageDialog(null, "Time Mandante e Visitante não podem ser o mesmo!");   
+       }else {
+//        GlobalInstance.campeonato.addPartida(new Partida(choice1.getSelectedItem(), choice2.getSelectedItem(), 1, 1));
+        showMessageDialog(null, "Partida cadastrada com sucesso!"); 
+        this.choice1.select(0);
+        this.choice2.select(0);
+        this.textField1.setText("0");
+        this.textField2.setText("0");
+       }
     }//GEN-LAST:event_button3ActionPerformed
 
     private void textField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField1ActionPerformed
@@ -166,10 +191,8 @@ public class CadastroPartida extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_textField2ActionPerformed
 
-    
     //atributos
-    
-    private Menu menuPrincipal; 
+    private Menu menuPrincipal;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button button2;
     private java.awt.Button button3;

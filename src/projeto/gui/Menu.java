@@ -118,6 +118,7 @@ public class Menu extends javax.swing.JPanel {
         GlobalInstance.janela.add(GlobalInstance.cPartida);
         GlobalInstance.cPartida.updateUI();
         GlobalInstance.cPartida.setVisible(true);
+        GlobalInstance.cPartida.atualizarTimes();
         
         
         
@@ -137,6 +138,7 @@ public class Menu extends javax.swing.JPanel {
         GlobalInstance.janela.add(GlobalInstance.lTime);
         GlobalInstance.lTime.updateUI();
         GlobalInstance.lTime.setVisible(true);
+        GlobalInstance.lTime.Atualiza();
         
     }//GEN-LAST:event_button3ActionPerformed
 
@@ -146,6 +148,7 @@ public class Menu extends javax.swing.JPanel {
         GlobalInstance.janela.add(GlobalInstance.lPartida);
         GlobalInstance.lPartida.updateUI();
         GlobalInstance.lPartida.setVisible(true); 
+        GlobalInstance.lPartida.Atualiza();
     }//GEN-LAST:event_button4ActionPerformed
 
     private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
