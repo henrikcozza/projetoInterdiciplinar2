@@ -174,7 +174,14 @@ public class CadastroPartida extends javax.swing.JPanel {
        }else if(choice1.getSelectedIndex() == choice2.getSelectedIndex()){
         showMessageDialog(null, "Time Mandante e Visitante não podem ser o mesmo!");   
        }else {
-//        GlobalInstance.campeonato.addPartida(new Partida(choice1.getSelectedItem(), choice2.getSelectedItem(), 1, 1));
+        GlobalInstance.campeonato.addPartida(
+                new Partida(
+                        GlobalInstance.campeonato.getTimeMandante(choice1.getSelectedItem()),
+                        GlobalInstance.campeonato.getTimeVisitante(choice2.getSelectedItem()), 
+                        Integer.parseInt(textField1.getText()), 
+                        Integer.parseInt(textField2.getText())
+                )
+        );
         showMessageDialog(null, "Partida cadastrada com sucesso!"); 
         this.choice1.select(0);
         this.choice2.select(0);
