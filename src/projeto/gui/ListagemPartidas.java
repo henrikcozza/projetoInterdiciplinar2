@@ -61,6 +61,7 @@ public class ListagemPartidas extends javax.swing.JPanel {
         //seleciona coluna e centraliza texto
         table.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
         table.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
+        table.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
     }
 
     /**
